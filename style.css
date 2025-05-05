@@ -1,0 +1,35 @@
+* {
+    font-family: verdana, serif;
+    list-style: none;
+    text-align: center;
+
+}
+
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+}
+
+.buscador{
+    margin: auto;
+    width: 25vw;
+    height: 40vw;
+    padding: 2rem;
+    background-color: darksalmon;
+    border-radius: 1rem;
+}
+
+#nombre_pokemon {
+    width: 15rem;
+    border-radius: 0.4rem;
+}
+
+li{
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+img{
+    padding-top: 0.5rem;
+    width: 20vw;
+}

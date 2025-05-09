@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
 
+
 <section class="contenedor">
-    <article class="buscador">
-        <h1>Datos del Pokemon</h1>
-        <input type="text" name="Nombre" id="nombre_pokemon">
-        <button type="submit" id="solicitar_pokemon">Enviar</button>
-        <ul id="datos_pokemon">
-            <li id="nombre">Nombre: </li>
-            <li id="altura">Altura: </li>
-            <li id="peso">Peso: </li>
-        </ul>
+    <article class="card">
+        <h1 class="titulo">Pokédex</h1>
+        <input type="text" id="nombre_pokemon" placeholder="Ingresa un nombre">
+        <button id="solicitar_pokemon">Buscar</button>
+        <div id="error_card" class="error-card" hidden>
+            Pokémon no encontrado. Verifica el nombre.
+        </div>
+        <article id="resultado" class="resultado">
+            <ul id="datos_pokemon">
+                <li id="nombre">Nombre: </li>
+                <li id="altura">Altura: </li>
+                <li id="peso">Peso: </li>
+            </ul>
+        </article>
     </article>
-
 </section>
-
 
 </body>
 <script src="./index.js"></script>

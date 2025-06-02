@@ -52,10 +52,6 @@ li{
     list-style: none;
 }
 
-#nombre_pokemon {
-    text-align: center;
-}
-
 body {
     background: linear-gradient(to bottom right, #ff1a1a, #cc0000);
     min-height: 100vh;
@@ -100,6 +96,7 @@ input[type="text"] {
     border-radius: 0.75rem;
     border: 2px solid #555;
     font-size: 1rem;
+    text-align: center;
     outline: none;
     background-color: #fff;
     color: #222;

@@ -12,13 +12,25 @@ const datos_pokemon = document.getElementById('datos_pokemon');
 let imgn = document.createElement('img');
 datos_pokemon.appendChild(imgn);
 
+// --- Búsqueda automática por input, a partir de la 3 letra ---
+let debounceTimer;
+nombre.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        const nombrePokemon = nombre.value.trim().toLowerCase();
+        if (nombrePokemon.length >= 3 && tipo.value.trim() === '') {
+            buscarPokemon();
+        }
+    }, 500);
+});
 
+button2.addEventListener('click', buscarPokemon);
 
-button2.addEventListener('click', async () => {
+async function buscarPokemon() {
     const nombrePokemon = nombre.value.trim().toLowerCase();
     const tipoPokemon = tipo.value.trim().toLowerCase();
 
-    // Limpia resultados e inicializa estructura
+    // --- Limpia resultados e inicializa estructura ---
     liNombre.textContent = '';
     liAltura.textContent = '';
     liPeso.textContent = '';
@@ -43,55 +55,34 @@ button2.addEventListener('click', async () => {
         return;
     }
 
+    datos_pokemon.innerHTML = '';
+
     // --- Búsqueda por nombre ---
     if (nombrePokemon) {
-        if (nombrePokemon === 'chu') {
-            try {
-                const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1300');
-                const data = await res.json();
-                const matches = data.results.filter(p => p.name.includes('chu'));
-                if (matches.length === 0) throw new Error('No se encontraron Pokémon con "chu".');
+        try {
+            const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1300');
+            const data = await res.json();
+            const matches = data.results.filter(p => p.name.startsWith(nombrePokemon));
+            if (matches.length === 0) throw new Error(`No se encontraron Pokémon que empiecen por "${nombrePokemon}".`);
 
-                for (const poke of matches) {
-                    const res = await fetch(poke.url);
-                    const info = await res.json();
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        Nombre: ${info.name} <br>
-                        Altura: ${info.height} m <br>
-                        Peso: ${info.weight} kg
-                        <img class="pokemon-img" src="${info.sprites.front_default}" />
-                        <hr>
-                    `;
-                    datos_pokemon.appendChild(li);
-                }
-            } catch (error) {
-                console.error('Error en búsqueda "chu":', error.message);
-                errorCard.hidden = false;
-                errorCard.textContent = error.message;
-                setTimeout(() => { errorCard.hidden = true; }, 4000);
+            for (const poke of matches) {
+                const res = await fetch(poke.url);
+                const info = await res.json();
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    Nombre: ${info.name} <br>
+                    Altura: ${info.height} m <br>
+                    Peso: ${info.weight} kg
+                    <img class="pokemon-img" src="${info.sprites.front_default}" />
+                    <hr>
+                `;
+                datos_pokemon.appendChild(li);
             }
-        } else {
-            try {
-                const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
-                if (!res.ok) throw new Error('Pokémon no encontrado');
-                const data = await res.json();
-
-                liNombre.textContent = `Nombre: ${data.name}`;
-                liAltura.textContent = `Altura: ${data.height} m`;
-                liPeso.textContent = `Peso: ${data.weight} kg`;
-                imgn.src = data.sprites.front_default;
-
-                datos_pokemon.appendChild(liNombre);
-                datos_pokemon.appendChild(liAltura);
-                datos_pokemon.appendChild(liPeso);
-                datos_pokemon.appendChild(imgn);
-            } catch (error) {
-                console.error('Error al obtener el Pokémon:', error.message);
-                errorCard.hidden = false;
-                errorCard.textContent = error.message;
-                setTimeout(() => { errorCard.hidden = true; }, 4000);
-            }
+        } catch (error) {
+            console.error('Error al buscar por nombre:', error.message);
+            errorCard.hidden = false;
+            errorCard.textContent = error.message;
+            setTimeout(() => { errorCard.hidden = true; }, 4000);
         }
         return;
     }
@@ -106,7 +97,7 @@ button2.addEventListener('click', async () => {
             const pokemons = data.pokemon;
             if (pokemons.length === 0) throw new Error('No se encontraron Pokémon de ese tipo.');
 
-            for (let i = 0; i < Math.min(pokemons.length); i++) {
+            for (let i = 0; i < pokemons.length; i++) {
                 const pokeRes = await fetch(pokemons[i].pokemon.url);
                 const info = await pokeRes.json();
 
@@ -127,5 +118,4 @@ button2.addEventListener('click', async () => {
             setTimeout(() => { errorCard.hidden = true; }, 4000);
         }
     }
-});
-
+}

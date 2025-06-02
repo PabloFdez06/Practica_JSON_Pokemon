@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88e704b-e738-4e3e-bff6-e40b1818966b" name="Changes" comment="Casi terminado, falta arreglar algun bug y darle estilo.">
+    <list default="true" id="c88e704b-e738-4e3e-bff6-e40b1818966b" name="Changes" comment="**RECUPERACIÓN** Parte de filtrar por tipos terminada, comienzo que busque sin clickar.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +73,7 @@
       <workItem from="1747057159584" duration="636000" />
       <workItem from="1747062810036" duration="312000" />
       <workItem from="1747075255339" duration="8000" />
-      <workItem from="1748871781408" duration="3528000" />
+      <workItem from="1748871781408" duration="5191000" />
     </task>
     <task id="LOCAL-00001" summary="Casi terminado, falta arreglar algun bug y darle estilo.">
       <option name="closed" value="true" />
@@ -84,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746467368048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="**RECUPERACIÓN** Parte de filtrar por tipos terminada, comienzo que busque sin clickar.">
+      <option name="closed" value="true" />
+      <created>1748875793245</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748875793245</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Casi terminado, falta arreglar algun bug y darle estilo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Casi terminado, falta arreglar algun bug y darle estilo." />
+    <MESSAGE value="**RECUPERACIÓN** Parte de filtrar por tipos terminada, comienzo que busque sin clickar." />
+    <option name="LAST_COMMIT_MESSAGE" value="**RECUPERACIÓN** Parte de filtrar por tipos terminada, comienzo que busque sin clickar." />
   </component>
 </project>

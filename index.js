@@ -7,6 +7,35 @@ const errorCard = document.getElementById('error_card');
 const liNombre = document.getElementById('nombre');
 const liAltura = document.getElementById('altura');
 const liPeso = document.getElementById('peso');
+
+function toggleInputs(entradaInput, inputADesactivar) {
+    if (entradaInput.value.trim() !== '') {
+        inputADesactivar.disabled = true;
+        inputADesactivar.placeholder = '-';
+    } else {
+        inputADesactivar.disabled = false;
+        //inputADesactivar.placeholder = inputADesactivar === nombre ? 'Ingresa un nombre' : 'Ingresa un tipo';
+
+        if (inputADesactivar === nombre) {
+            inputADesactivar.placeholder = 'ingresa un nombre'
+        } else {
+            inputADesactivar.placeholder = 'Ingresa un tipo'
+        }
+    }
+
+    // La linea comentada y el if else, hacen literalmente lo mismo, pero la linea comentada lo hace con un operador ternario que es la interrogación,
+    // ahorra muchas lineas, pero personalmente como se hacerlo es con el if else, ahora ya si entiendo como se hace de esa manera.
+}
+
+nombre.addEventListener('input', () => {
+    toggleInputs(nombre, tipo);
+});
+
+tipo.addEventListener('input', () => {
+    toggleInputs(tipo, nombre);
+});
+
+
 const datos_pokemon = document.getElementById('datos_pokemon');
 
 let imgn = document.createElement('img');
@@ -55,7 +84,7 @@ async function buscarPokemon() {
         return;
     }
 
-    datos_pokemon.innerHTML = '';
+    datos_pokemon.innerHTML = ''; // esta linea la pongo para que si hay un error en la validación, no te haga la busqueda.
 
     // --- Búsqueda por nombre ---
     if (nombrePokemon) {

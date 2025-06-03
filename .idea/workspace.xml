@@ -54,7 +54,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.22855.79" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -74,6 +74,7 @@
       <workItem from="1747062810036" duration="312000" />
       <workItem from="1747075255339" duration="8000" />
       <workItem from="1748871781408" duration="5191000" />
+      <workItem from="1748962826974" duration="915000" />
     </task>
     <task id="LOCAL-00001" summary="Casi terminado, falta arreglar algun bug y darle estilo.">
       <option name="closed" value="true" />

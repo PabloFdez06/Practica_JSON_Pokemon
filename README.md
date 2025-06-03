@@ -4,4 +4,4 @@
 3. Validaciones añadidas para que introduzca algun dato antes de realizar una busqueda, o bien en 1 de los 2 campos.
 4. Cuando comienzas a escribir en uno de los 2 campos posibles, el estado del otro input pasa a ser "disabled" y el placeholder pasa a ser un guión.
 
-**ENLACE AL DEPLOYMENT DE LA WEB:  [DEPLOYMENT](aaaaaa)**
+**ENLACE AL DEPLOYMENT DE LA WEB:  [DEPLOYMENT](https://pablofdez06.github.io/Practica_JSON_Pokemon/)**

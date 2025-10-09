@@ -100,11 +100,19 @@ async function buscarPokemon() {
                 const li = document.createElement('li');
                 li.innerHTML = `
                     Nombre: ${info.name} <br>
-                    Altura: ${info.height} m <br>
-                    Peso: ${info.weight} kg
-                    <img class="pokemon-img" src="${info.sprites.front_default}" />
+                    Altura: ${info.height} cm <br>
+                    Peso: ${info.weight} g
+                    <img class="pokemon-img" src="${info.sprites.front_default}" data-nombre="${info.name}" />
                     <hr>
                 `;
+
+                
+                const foto = li.querySelector('.pokemon-img');
+                foto.addEventListener('click', function() {
+                    const nombre = foto.getAttribute('data-nombre');
+                    window.location.href = `detalle.html?nombre=${encodeURIComponent(nombre)}`;
+                });
+
                 datos_pokemon.appendChild(li);
             }
         } catch (error) {
@@ -133,11 +141,20 @@ async function buscarPokemon() {
                 const li = document.createElement('li');
                 li.innerHTML = `
                     Nombre: ${info.name} <br>
-                    Altura: ${info.height} m <br>
-                    Peso: ${info.weight} kg
-                    <img class="pokemon-img" src="${info.sprites.front_default}" />
+                    Altura: ${info.height} cm <br>
+                    Peso: ${info.weight} g
+                    <img class="pokemon-img" src="${info.sprites.front_default}" data-nombre="${info.name}" />
                     <hr>
                 `;
+
+                
+                const foto = li.querySelector('.pokemon-img');
+                foto.addEventListener('click', function() {
+                    const nombre = foto.getAttribute('data-nombre');
+                    window.location.href = `detalle.html?nombre=${encodeURIComponent(nombre)}`;
+                });
+
+                
                 datos_pokemon.appendChild(li);
             }
         } catch (error) {
@@ -146,5 +163,14 @@ async function buscarPokemon() {
             errorCard.textContent = error.message;
             setTimeout(() => { errorCard.hidden = true; }, 4000);
         }
+    }
+
+    // Clickar foto y te envia a página nueva con los datos de ese pokemon en concreto.
+
+    let foto = document.getElementsByClassName("pokemon-img")
+
+    foto.addEventListener('click', clicarFoto)
+    function clicarFoto() {
+
     }
 }

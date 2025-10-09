@@ -109,7 +109,7 @@ button {
     font-weight: bold;
     border-radius: 0.75rem;
     cursor: pointer;
-    margin-bottom: 1rem;
+    margin: 1rem;
     font-size: 1rem;
     box-shadow: 0 4px #c9a400;
     transition: 0.2s ease;
@@ -131,6 +131,10 @@ button:hover {
     display: block;
 }
 
+.pokemon-img:hover {
+  cursor: pointer;
+}
+
 #datos_pokemon li {
     font-size: 1.1rem;
     text-align: left;
@@ -149,6 +153,15 @@ button:hover {
     animation: fadeIn 0.3s ease;
     font-size: 0.8rem;
 }
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }

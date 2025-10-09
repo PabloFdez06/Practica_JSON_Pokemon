@@ -164,13 +164,4 @@ async function buscarPokemon() {
             setTimeout(() => { errorCard.hidden = true; }, 4000);
         }
     }
-
-    // Clickar foto y te envia a página nueva con los datos de ese pokemon en concreto.
-
-    let foto = document.getElementsByClassName("pokemon-img")
-
-    foto.addEventListener('click', clicarFoto)
-    function clicarFoto() {
-
-    }
 }

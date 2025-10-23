@@ -1,4 +1,3 @@
-// detalle.js
 const params = new URLSearchParams(window.location.search);
 const nombre = params.get('nombre');
 const detalleDiv = document.getElementById('detalle_pokemon');
@@ -17,8 +16,8 @@ async function mostrarDetalle(nombrePokemon) {
         li.innerHTML = `
             <h2>${info.name}</h2>
             <img src="${info.sprites.front_default}" />
-            <p>Altura: ${info.height} m</p>
-            <p>Peso: ${info.weight} kg</p>
+            <p>Altura: ${info.height} cm</p>
+            <p>Peso: ${info.weight} g</p>
             <p>Experiencia base: ${info.base_experience}</p>
             <p>Tipo: ${info.types.map(t => t.type.name).join(', ')}</p>
             <p>Habilidades: ${info.abilities.map(a => a.ability.name).join(', ')}</p>

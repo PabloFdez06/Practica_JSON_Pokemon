@@ -9,25 +9,26 @@
 <body>
 
 
-<section class="contenedor">
+  <section class="contenedor">
     <article class="card">
-        <h1 class="titulo">Pokédex</h1>
-        <input type="text" id="nombre_pokemon" placeholder="Ingresa un nombre">
-        <input type="text" id="tipo_pokemon" placeholder="Ingresa un tipo">
-        <button id="solicitar_pokemon">Buscar</button>
-        <div id="error_card" class="error-card" hidden>
-            Pokémon no encontrado. Verifica el nombre.
-        </div>
-        <article id="resultado" class="resultado">
-            <ul id="datos_pokemon">
-                <li id="nombre">Nombre: </li>
-                <li id="altura">Altura: </li>
-                <li id="peso">Peso: </li>
-            </ul>
-        </article>
-    </article>
-</section>
+      <h1 class="titulo">Pokédex</h1>
+      <input type="text" id="nombre_pokemon" placeholder="Ingresa un nombre">
+      <input type="text" id="tipo_pokemon" placeholder="Ingresa un tipo">
+      <button id="solicitar_pokemon">Buscar</button>
+      <div id="error_card" class="error-card" hidden></div>
+      <article id="resultado" class="resultado">
+        <ul id="datos_pokemon"></ul>
+      </article>
+      <!-- Contenedor de detalle oculto -->
+        <div id="detalle_pokemon_modal" class="modal" style="display:none;">
+            <div class="modal-inner">
+                <button id="cerrar_detalle">Cerrar</button>
+                <ul id="detalle_pokemon"></ul>
+            </div>
+            </div>
 
+    </article>
+  </section>
 </body>
 <script src="./index.js"></script>
 </html>
